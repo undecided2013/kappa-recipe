@@ -14,6 +14,8 @@ namespace kappa.recipe.substrate
                 if (input != null)
                 {
                     TState state = StateRetriever();// Get Internal State
+                    if (state == null)
+                        state = StateInitializer();
                     state = Processor(new Tuple<TInput, TState>(input, state)); // Process Message
                     StateSetter(state);// Update Internal State
                     StatePublisher(state);// Update Public State

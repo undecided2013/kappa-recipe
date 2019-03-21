@@ -56,7 +56,6 @@ namespace kappa.recipe.substrate
         public void Start()
         {
             Snapshot<TState> snap = Initialize();
-            //Initialize(snap);
             Commence(snap);
         }
     }

@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.28711.60
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kappa.recipe.substrate", "kappa.recipe.substrate\kappa.recipe.substrate.csproj", "{B4AD777F-0566-4A7E-BCFB-470212FE239C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kappa.recipe.substrate.tests", "kappa.recipe.substrate.tests\kappa.recipe.substrate.tests.csproj", "{EE2DD405-8A39-4EFD-9D5A-1FA319EF19BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "kappa.recipe.substrate.tests", "kappa.recipe.substrate.tests\kappa.recipe.substrate.tests.csproj", "{EE2DD405-8A39-4EFD-9D5A-1FA319EF19BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kappa.recipe.substrate.redis.tests", "kappa.recipe.substrate.redis.tests\kappa.recipe.substrate.redis.tests.csproj", "{08A961AB-D374-44A2-BDAE-6ABFC44A5FB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EE2DD405-8A39-4EFD-9D5A-1FA319EF19BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE2DD405-8A39-4EFD-9D5A-1FA319EF19BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE2DD405-8A39-4EFD-9D5A-1FA319EF19BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08A961AB-D374-44A2-BDAE-6ABFC44A5FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08A961AB-D374-44A2-BDAE-6ABFC44A5FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08A961AB-D374-44A2-BDAE-6ABFC44A5FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08A961AB-D374-44A2-BDAE-6ABFC44A5FB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
