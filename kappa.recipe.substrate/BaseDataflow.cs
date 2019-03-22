@@ -36,6 +36,7 @@ namespace kappa.recipe.substrate
                     result = SnapshotInitializer();
                     result.State = StateInitializer();
                     return result;
+                // TODO:
                 //             case enStartupBehaviour.StartAtEnd:
                 //                break;
                 case enStartupBehaviour.StartAtLastSnapshot:

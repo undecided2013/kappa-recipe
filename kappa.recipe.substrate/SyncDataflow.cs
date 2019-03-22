@@ -19,12 +19,14 @@ namespace kappa.recipe.substrate
                     state = Processor(new Tuple<TInput, TState>(input, state)); // Process Message
                     StateSetter(state);// Update Internal State
                     StatePublisher(state);// Update Public State
-                    snap.LastMessageID = input.ID;
-                    snap.LastTimeStamp = input.Timestamp;
+                    snap.LastMessageID = input.MessageID;
+                    snap.IncludedMessageIDs.Add(input.MessageID);
+                    snap.LastTimeStamp = input.MessageTimestamp;
                     snap.State = state;
                     if (SnapshotTimer.Increment())
                     {
                         SnapshotUpdater(snap); // Save Recovery State
+                        snap.IncludedMessageIDs.Clear();
                     }
                 }
             }

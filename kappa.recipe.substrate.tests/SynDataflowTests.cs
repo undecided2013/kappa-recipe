@@ -10,8 +10,9 @@ namespace kappa.recipe.substrate.tests
     internal class TestInput : IBasicInput
     {
         public int Value;
-        public string ID { get; set; }
-        public long Timestamp { get; set; }
+        public string MessageID { get; set; }
+        public string PayloadID { get; set; }
+        public long MessageTimestamp { get; set; }
     }
     internal class TestStateRequest { }
     internal class TestState
@@ -31,7 +32,7 @@ namespace kappa.recipe.substrate.tests
             // Populate dummy data
             for (int x = 0; x < 1000; x++)
             {
-                TestInput ti = new TestInput() { ID = x.ToString(), Value = 1 };
+                TestInput ti = new TestInput() { MessageID = x.ToString(),PayloadID = x.ToString(), Value = 1 };
                 messageArray[x] = JsonConvert.SerializeObject(ti);
             }
             // Dummy State Storage

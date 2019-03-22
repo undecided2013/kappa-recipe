@@ -6,7 +6,8 @@ namespace kappa.recipe.substrate
 {
     public interface IBasicInput
     {
-        string ID { get; }
-        long Timestamp { get; }
+        string MessageID { get; }
+        long MessageTimestamp { get; }
+        string PayloadID { get; }
     }
 }
