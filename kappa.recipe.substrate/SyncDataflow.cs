@@ -10,7 +10,7 @@ namespace kappa.recipe.substrate
         {
             while (!CancellationToken.IsCancellationRequested)
             {
-                TInput input = InputGetter(snap); // Get Next Message to process
+                TInput input = InputGetter(snap); // Get Next Message to process, assuming non-blocking get
                 if (input != null)
                 {
                     TState state = StateRetriever();// Get Internal State

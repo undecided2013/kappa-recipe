@@ -28,6 +28,7 @@ namespace kappa.recipe.substrate.redis.tests
         [TestMethod]
         public void ReadFromRedisStream()
         {
+            // The Token allows for external control of the dataflow so that it could be stopped as needed
             // We can use this to signal completion
             CancellationTokenSource cts = new CancellationTokenSource();
             //  Must have Redis running locally, if not, change connection string to correct host
@@ -66,7 +67,7 @@ namespace kappa.recipe.substrate.redis.tests
                 else
                 {
                     cts.Cancel(); // Got null = end of stream - Signal to the engine to end.
-                        return null;
+                    return null; // In a real application you would not stop at end of stream, you would keep polling
                 }
             }).
             SetProcessor((Tuple<TestInput, TestState> i) =>  // Process Message
@@ -74,9 +75,7 @@ namespace kappa.recipe.substrate.redis.tests
                 TestState result = new TestState()
                 {
                     TotalValue = i.Item2.TotalValue + i.Item1.Value //Simple, just total it up
-                    // IncludedInputs = new List<string>(i.Item2.IncludedInputs)
                 };
-                // result.IncludedInputs.Add(i.Item1.MessageID);
                 return result;
               }).
             SetSnapshotRetriever(() => // Get last snapshot
